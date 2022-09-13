@@ -1,1 +1,1 @@
-putchar
+new
