@@ -1,39 +1,32 @@
-#include "main.h"
-
-
+#include <stdlib.h>
+#include <time.h>
+#include <stdio.h>
 
 /**
+ * main - Entry point
  *
- *   * _print_rev_recursion - this prints a string in reverse
+ * Description: print the value of n status:
+ *              greater than, is zero and is not less than 6.
  *
- *     * @s: the string to be reversed
- *
- *       *
- *
- *         * Return: Nothing.
- *
- *         */
+ * Return: Always O (Success)
+*/
 
-void _print_rev_recursion(char *s)
-
+int main(void)
 {
+	int n, digit;
 
-		if (*s == '\0')
+	srand(time(0));
+	n = rand() - RAND_MAX / 2;
 
-				{
+	/*my code*/
+	digit = n % 10; /*gets last digit*/
 
-							return;
+	if (digit > 5)
+		printf("Last digit of %i is %i and is greater than 5\n", n, digit);
+	else if (digit == 0)
+		printf("Last digit of %i is %i and is 0\n", n, digit);
+	else if (digit < 6 && digit != 0)
+		printf("Last digit of %i is %i and is less than 6 and not 0\n", n, digit);
 
-								}
-
-
-
-			s++;
-
-				_print_rev_recursion(s);
-
-					s--;
-
-						_putchar(*s);
-
+	return (0);
 }
